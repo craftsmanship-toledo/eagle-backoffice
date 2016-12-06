@@ -1,5 +1,5 @@
 Bundle-Name: backoffice-service
-Bundle-SymbolicName: com.craftsmanship.toledo.backoffice.service
+Bundle-SymbolicName: com.craftsmanship.toledo.eagle.backoffice.service
 Bundle-Version: 1.0.0
 Liferay-Require-SchemaVersion: 1.0.0
 Liferay-Service: true

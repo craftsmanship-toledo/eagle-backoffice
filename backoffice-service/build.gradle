@@ -11,4 +11,4 @@ buildService {
 	apiDir = "../backoffice-api/src/main/java"
 }
 
-group = "backoffice"
+group = "com.craftsmanship.toledo.eagle.backoffice"
