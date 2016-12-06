@@ -1,1 +1,1 @@
-include "backoffice-api", "backoffice-service"
+include "backoffice-api", "backoffice-service", "backoffice-web"

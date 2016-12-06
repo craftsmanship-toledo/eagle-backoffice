@@ -1,0 +1,4 @@
+Bundle-Name: backoffice-web
+Bundle-SymbolicName: com.craftsmanship.toledo.eagle.backoffice.web
+Bundle-Version: 1.0.0
+-sources: true
