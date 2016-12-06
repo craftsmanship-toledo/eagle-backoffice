@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.0.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_0_0.dtd">
 
-<service-builder package-path="backoffice">
+<service-builder package-path="com.craftsmanship.toledo.eagle.backoffice">
 	<namespace>Eagle</namespace>
 	<!--<entity data-source="sampleDataSource" local-service="true" name="Foo" remote-service="false" session-factory="sampleSessionFactory" table="foo" tx-manager="sampleTransactionManager uuid="true"">-->
 	<entity local-service="true" name="Issue" remote-service="true" uuid="true">
 
 		<!-- PK fields -->
 
-		<column name="fooId" primary="true" type="long" />
+		<column name="issueId" primary="true" type="long" />
 
 		<!-- Group instance -->
 
@@ -24,22 +24,31 @@
 
 		<!-- Other fields -->
 
-		<column name="field1" type="String" />
-		<column name="field2" type="boolean" />
-		<column name="field3" type="int" />
-		<column name="field4" type="Date" />
-		<column name="field5" type="String" />
+		<column name="type" type="String" />
+		<column name="title" type="String" />
+		<column name="description" type="String" />
+		<column name="summary" type="String" />
+		<column name="status" type="String" />
+		<column name="votes" type="long" />
+		<column name="picture" type="String" />
 
 		<!-- Order -->
 
 		<order by="asc">
-			<order-column name="field1" />
+			<order-column name="votes" />
 		</order>
 
 		<!-- Finder methods -->
 
-		<finder name="Field2" return-type="Collection">
-			<finder-column name="field2" />
+		<finder name="Group" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+		</finder>
+		<finder name="Type" return-type="Collection">
+			<finder-column name="type" />
+		</finder>
+		<finder name="Status" return-type="Collection">
+			<finder-column name="status" />
 		</finder>
 
 		<!-- References -->
