@@ -1,0 +1,9 @@
+Bundle-Name: backoffice-api
+Bundle-SymbolicName: com.craftsmanship.toledo.backoffice.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	backoffice.exception,\
+	backoffice.model,\
+	backoffice.service,\
+	backoffice.service.persistence
+-includeresource: META-INF/service.xml=../backoffice-service/service.xml
