@@ -68,10 +68,6 @@ import org.osgi.service.component.annotations.Reference;
 )
 public class JSPPortlet extends MVCPortlet {
 
-	public IssueLocalService getIssueLocalService() {
-		return _issueLocalService;
-	}
-
 	@Override
 	public void processAction(
 			ActionRequest actionRequest, ActionResponse actionResponse)
@@ -108,20 +104,20 @@ public class JSPPortlet extends MVCPortlet {
 		throws IOException, PortletException {
 
 		//set service bean
-		request.setAttribute("issueLocalService", getIssueLocalService());
+		request.setAttribute("issueLocalService", _issueLocalService);
 
 		super.render(request, response);
-	}
-
-	@Reference
-	public void setIssueLocalService(IssueLocalService issueLocalService) {
-		_issueLocalService = issueLocalService;
 	}
 
 	protected void deleteIssue(ActionRequest actionRequest) throws Exception {
 		long issueId = ParamUtil.getLong(actionRequest, "issueId");
 
-		getIssueLocalService().deleteIssue(issueId);
+		_issueLocalService.deleteIssue(issueId);
+	}
+
+	@Reference
+	protected void setIssueLocalService(IssueLocalService issueLocalService) {
+		_issueLocalService = issueLocalService;
 	}
 
 	protected void updateIssue(ActionRequest actionRequest) throws Exception {
@@ -137,7 +133,7 @@ public class JSPPortlet extends MVCPortlet {
 		String picture = ParamUtil.getString(actionRequest, "picture");
 
 		if (issueId <= 0) {
-			Issue issue = getIssueLocalService().createIssue(0);
+			Issue issue = _issueLocalService.createIssue(0);
 
 			issue.setType(type);
 			issue.setTitle(title);
@@ -149,10 +145,10 @@ public class JSPPortlet extends MVCPortlet {
 
 			issue.isNew();
 
-			getIssueLocalService().addIssue(issue);
+			_issueLocalService.addIssue(issue);
 		}
 		else {
-			Issue issue = getIssueLocalService().fetchIssue(issueId);
+			Issue issue = _issueLocalService.fetchIssue(issueId);
 
 			issue.setType(type);
 			issue.setTitle(title);
@@ -162,7 +158,7 @@ public class JSPPortlet extends MVCPortlet {
 			issue.setVotes(votes);
 			issue.setPicture(picture);
 
-			getIssueLocalService().updateIssue(issue);
+			_issueLocalService.updateIssue(issue);
 		}
 	}
 
