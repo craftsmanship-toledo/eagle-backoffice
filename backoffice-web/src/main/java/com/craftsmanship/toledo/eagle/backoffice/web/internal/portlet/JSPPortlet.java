@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.craftsmanship.toledo.eagle.backoffice.web;
+package com.craftsmanship.toledo.eagle.backoffice.web.internal.portlet;
 
 import com.craftsmanship.toledo.eagle.backoffice.model.Issue;
 import com.craftsmanship.toledo.eagle.backoffice.service.IssueLocalService;
