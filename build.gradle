@@ -28,7 +28,7 @@ subprojects {
 
 		copy {
 			from "build/libs"
-			into "/tmp/deploy"
+			into project.property("eagle.backoffice.deploy.dir")
 		}
 	}
 }
