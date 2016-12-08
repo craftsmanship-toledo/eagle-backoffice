@@ -53,6 +53,15 @@ public class IssueLocalServiceUtil {
 		return getService().addIssue(issue);
 	}
 
+	public static com.craftsmanship.toledo.eagle.backoffice.model.Issue addIssue(
+		java.lang.String type, java.lang.String title,
+		java.lang.String description, java.lang.String summary,
+		java.lang.String status, java.lang.String picture)
+		throws com.liferay.portal.kernel.exception.PortalException {
+		return getService()
+				   .addIssue(type, title, description, summary, status, picture);
+	}
+
 	/**
 	* Creates a new issue with the primary key. Does not add the issue to the database.
 	*
@@ -141,6 +150,16 @@ public class IssueLocalServiceUtil {
 	public static com.craftsmanship.toledo.eagle.backoffice.model.Issue updateIssue(
 		com.craftsmanship.toledo.eagle.backoffice.model.Issue issue) {
 		return getService().updateIssue(issue);
+	}
+
+	public static com.craftsmanship.toledo.eagle.backoffice.model.Issue updateIssue(
+		long issueId, java.lang.String type, java.lang.String title,
+		java.lang.String description, java.lang.String summary,
+		java.lang.String status, java.lang.String picture)
+		throws com.liferay.portal.kernel.exception.PortalException {
+		return getService()
+				   .updateIssue(issueId, type, title, description, summary,
+			status, picture);
 	}
 
 	public static com.liferay.portal.kernel.dao.orm.ActionableDynamicQuery getActionableDynamicQuery() {

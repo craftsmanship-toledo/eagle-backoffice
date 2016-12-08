@@ -73,6 +73,11 @@ public interface IssueLocalService extends BaseLocalService,
 	@Indexable(type = IndexableType.REINDEX)
 	public Issue addIssue(Issue issue);
 
+	public Issue addIssue(java.lang.String type, java.lang.String title,
+		java.lang.String description, java.lang.String summary,
+		java.lang.String status, java.lang.String picture)
+		throws PortalException;
+
 	/**
 	* Creates a new issue with the primary key. Does not add the issue to the database.
 	*
@@ -143,6 +148,11 @@ public interface IssueLocalService extends BaseLocalService,
 	*/
 	@Indexable(type = IndexableType.REINDEX)
 	public Issue updateIssue(Issue issue);
+
+	public Issue updateIssue(long issueId, java.lang.String type,
+		java.lang.String title, java.lang.String description,
+		java.lang.String summary, java.lang.String status,
+		java.lang.String picture) throws PortalException;
 
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public ActionableDynamicQuery getActionableDynamicQuery();
