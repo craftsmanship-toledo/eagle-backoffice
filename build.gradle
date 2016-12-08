@@ -22,4 +22,13 @@ subprojects {
 			url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
 		}
 	}
+
+	task deployToPortal () {
+		dependsOn jar
+
+		copy {
+			from "build/libs"
+			into "/tmp/deploy"
+		}
+	}
 }
