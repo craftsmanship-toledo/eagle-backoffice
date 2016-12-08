@@ -16,6 +16,7 @@
 
 package com.craftsmanship.toledo.eagle.backoffice.web.internal.portlet;
 
+import com.craftsmanship.toledo.eagle.backoffice.constants.EaglePortletKeys;
 import com.craftsmanship.toledo.eagle.backoffice.model.Issue;
 import com.craftsmanship.toledo.eagle.backoffice.service.IssueLocalService;
 
@@ -58,6 +59,7 @@ import org.osgi.service.component.annotations.Reference;
 		"javax.portlet.info.title=Eagle Backoffice",
 		"javax.portlet.init-param.template-path=/",
 		"javax.portlet.init-param.view-template=/view.jsp",
+		"javax.portlet.name=" + EaglePortletKeys.ISSUES,
 		"javax.portlet.resource-bundle=content.Language",
 		"javax.portlet.security-role-ref=power-user,user",
 		"javax.portlet.supports.mime-type=text/html"
