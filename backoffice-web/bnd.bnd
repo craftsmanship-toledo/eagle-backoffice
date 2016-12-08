@@ -1,4 +1,6 @@
 Bundle-Name: backoffice-web
 Bundle-SymbolicName: com.craftsmanship.toledo.eagle.backoffice.web
 Bundle-Version: 1.0.0
--sources: true
+Liferay-Releng-Module-Group-Description:
+Liferay-Releng-Module-Group-Title: Eagle Backoffice
+Web-ContextPath: /backoffice-web
