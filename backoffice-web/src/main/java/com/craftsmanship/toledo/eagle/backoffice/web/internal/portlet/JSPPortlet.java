@@ -17,7 +17,6 @@
 package com.craftsmanship.toledo.eagle.backoffice.web.internal.portlet;
 
 import com.craftsmanship.toledo.eagle.backoffice.constants.EaglePortletKeys;
-import com.craftsmanship.toledo.eagle.backoffice.model.Issue;
 import com.craftsmanship.toledo.eagle.backoffice.service.IssueLocalService;
 
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
@@ -133,30 +132,12 @@ public class JSPPortlet extends MVCPortlet {
 		String picture = ParamUtil.getString(actionRequest, "picture");
 
 		if (issueId <= 0) {
-			Issue issue = _issueLocalService.createIssue(0);
-
-			issue.setType(type);
-			issue.setTitle(title);
-			issue.setDescription(description);
-			issue.setSummary(summary);
-			issue.setStatus(status);
-			issue.setVotes(votes);
-			issue.setPicture(picture);
-
-			_issueLocalService.addIssue(issue);
+			_issueLocalService.addIssue(
+				type, title, description, summary, status, picture);
 		}
 		else {
-			Issue issue = _issueLocalService.fetchIssue(issueId);
-
-			issue.setType(type);
-			issue.setTitle(title);
-			issue.setDescription(description);
-			issue.setSummary(summary);
-			issue.setStatus(status);
-			issue.setVotes(votes);
-			issue.setPicture(picture);
-
-			_issueLocalService.updateIssue(issue);
+			_issueLocalService.updateIssue(
+				issueId, type, title, description, summary, status, picture);
 		}
 	}
 
