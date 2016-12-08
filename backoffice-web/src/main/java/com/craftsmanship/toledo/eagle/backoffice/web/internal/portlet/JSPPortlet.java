@@ -143,8 +143,6 @@ public class JSPPortlet extends MVCPortlet {
 			issue.setVotes(votes);
 			issue.setPicture(picture);
 
-			issue.isNew();
-
 			_issueLocalService.addIssue(issue);
 		}
 		else {
