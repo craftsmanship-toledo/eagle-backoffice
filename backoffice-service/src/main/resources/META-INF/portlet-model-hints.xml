@@ -6,6 +6,9 @@
 		<hint name="display-width">500</hint>
 		<hint name="max-length">4000</hint>
 	</hint-collection>
+	<hint-collection name="URL">
+		<hint name="max-length">4000</hint>
+	</hint-collection>
 
 	<model name="com.craftsmanship.toledo.eagle.backoffice.model.Issue">
 		<field name="uuid" type="String" />
@@ -24,6 +27,8 @@
 		<field name="summary" type="String" />
 		<field name="status" type="String" />
 		<field name="votes" type="long" />
-		<field name="picture" type="String" />
+		<field name="picture" type="String">
+			<hint-collection name="URL" />
+		</field>
 	</model>
 </model-hints>
