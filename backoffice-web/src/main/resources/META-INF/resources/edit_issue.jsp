@@ -54,7 +54,7 @@ if (issueId > 0) {
 		<aui:input name="summary" />
 
 		<% if (issueId > 0)  { %>
-			<strong><%= HtmlUtil.escape(String.valueOf(issue.getVotes())) %></strong>
+			<span><%= HtmlUtil.escape(String.valueOf(issue.getVotes())) %></span>
 		<% } %>
 
 		<aui:input name="picture" />

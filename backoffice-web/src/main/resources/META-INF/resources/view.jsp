@@ -78,7 +78,7 @@
 
 			<div>
 				<div id="<portlet:namespace />votes_<%= issue.getIssueId() %>">>
-					<strong><%= HtmlUtil.escape(String.valueOf(issue.getVotes())) %></strong>
+					<span><%= HtmlUtil.escape(String.valueOf(issue.getVotes())) %></span>
 				</div>
 			</div>
 		</liferay-ui:search-container-column-text>
