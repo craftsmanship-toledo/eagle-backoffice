@@ -51,7 +51,7 @@
 			name="title"
 			valign="top"
 		>
-			<strong><%= issue.getTitle() %></strong>
+			<strong><%= HtmlUtil.escape(issue.getTitle()) %></strong>
 
 			<br />
 
