@@ -72,9 +72,16 @@
 		</liferay-ui:search-container-column-text>
 
 		<liferay-ui:search-container-column-text
-			property="votes"
+			name="votes"
 			valign="top"
-		/>
+		>
+
+			<div>
+				<div id="<portlet:namespace />votes_<%= issue.getIssueId() %>">>
+					<strong><%= HtmlUtil.escape(String.valueOf(issue.getVotes())) %></strong>
+				</div>
+			</div>
+		</liferay-ui:search-container-column-text>
 
 		<liferay-ui:search-container-column-jsp
 			cssClass="entry-action"
