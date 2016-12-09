@@ -77,7 +77,7 @@
 		>
 
 			<div>
-				<div id="<portlet:namespace />votes_<%= issue.getIssueId() %>">>
+				<div id="<portlet:namespace />votes_<%= issue.getIssueId() %>">
 					<span><%= HtmlUtil.escape(String.valueOf(issue.getVotes())) %></span>
 				</div>
 			</div>
